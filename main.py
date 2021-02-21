@@ -1,5 +1,5 @@
 from abc import ABC,abstractmethod,abstractproperty
-class Hero(ABC):  #abstraction
+class Hero(ABC): 
     @abstractmethod
     def durum(self):
         pass
@@ -25,7 +25,7 @@ class Hero(ABC):  #abstraction
 
 
 
-class MarvelHero(Hero): # inharitance
+class MarvelHero(Hero):
     def __init__(self,adi,guc,saglik):
         self.guc = guc
         self.saglik = saglik
@@ -52,7 +52,7 @@ class MarvelHero(Hero): # inharitance
     def __del__(self):
         print("R.I.P.",self.adi)
 
-class DeadPool(MarvelHero): # Inharitance
+class DeadPool(MarvelHero):
     def __init__(self):
         super().__init__("DeadPool",50,500)
 
@@ -115,7 +115,7 @@ class TurkKahramanlar(Hero):
         self.adi = adi
     def durum(self):
         print(f"{self.adi} Saglik:{self.saglik}")
-    @property # encapsulation
+    @property
     def vurus1(self):
         return self.guc
     @property
@@ -159,11 +159,6 @@ import time
 def HareketSec(obj,param): # polymorphism
     vurListe = [obj.vurus1,obj.vurus2,obj.vurus3]
     darbeListe = [obj.darbe1,obj.darbe2,obj.darbe3]
-    # if param == 1:
-    #     return random.choice(vurListe)
-    # else:
-    #     return random.choice(darbeListe)
-    # return random.choice(vurListe) if param == 1 else random.choice(darbeListe)
     return random.choice(vurListe if param == 1 else darbeListe)
 
     
